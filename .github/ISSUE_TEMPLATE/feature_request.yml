@@ -1,0 +1,15 @@
+name: Feature request
+description: Suggest a new tool or an improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What question should an assistant be able to answer?
+      placeholder: "e.g. Which of my updates are waiting for karma?"
+    validations:
+      required: true
+  - type: textarea
+    id: bodhi
+    attributes:
+      label: Which Bodhi data or endpoint does it need?
