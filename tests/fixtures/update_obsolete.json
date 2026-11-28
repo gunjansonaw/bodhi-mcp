@@ -1,0 +1,144 @@
+{
+  "update": {
+    "alias": "FEDORA-2025-4f2a6d9b01",
+    "title": "firefox-144.0-1.fc43",
+    "display_name": "",
+    "notes": "Update to 144.0",
+    "status": "obsolete",
+    "request": null,
+    "type": "security",
+    "severity": "high",
+    "suggest": "unspecified",
+    "critpath": false,
+    "critpath_groups": [],
+    "close_bugs": true,
+    "locked": false,
+    "pushed": false,
+    "karma": 0,
+    "stable_karma": 3,
+    "unstable_karma": -3,
+    "stable_days": 7,
+    "autokarma": true,
+    "autotime": true,
+    "require_bugs": true,
+    "require_testcases": true,
+    "requirements": "",
+    "test_gating_status": "passed",
+    "from_tag": null,
+    "date_submitted": "2025-10-13 19:30:02",
+    "date_modified": "2025-10-15 11:02:47",
+    "date_approved": null,
+    "date_testing": "2025-10-14 03:01:55",
+    "date_stable": null,
+    "content_type": "rpm",
+    "release": {
+      "name": "F43",
+      "long_name": "Fedora 43",
+      "version": "43",
+      "id_prefix": "FEDORA",
+      "branch": "f43",
+      "dist_tag": "f43",
+      "stable_tag": "f43-updates",
+      "testing_tag": "f43-updates-testing",
+      "candidate_tag": "f43-updates-candidate",
+      "pending_stable_tag": "f43-updates-pending",
+      "pending_testing_tag": "f43-updates-testing-pending",
+      "pending_signing_tag": "f43-signing-pending",
+      "override_tag": "f43-override",
+      "mail_template": "fedora_errata_template",
+      "state": "current",
+      "composed_by_bodhi": true,
+      "create_automatic_updates": false,
+      "package_manager": "dnf",
+      "testing_repository": "updates-testing",
+      "released_on": null,
+      "eol": null,
+      "setting_status": null,
+      "min_karma": 1,
+      "critpath_min_karma": 2,
+      "mandatory_days_in_testing": 7
+    },
+    "user": {
+      "id": 4031,
+      "name": "mstransky",
+      "email": "stransky@redhat.com",
+      "avatar": "https://seccdn.libravatar.org/avatar/0",
+      "openid": "mstransky.id.fedoraproject.org",
+      "groups": [
+        {
+          "name": "packager"
+        }
+      ]
+    },
+    "builds": [
+      {
+        "nvr": "firefox-144.0-1.fc43",
+        "release_id": 0,
+        "signed": true,
+        "type": "rpm",
+        "epoch": 0
+      }
+    ],
+    "bugs": [
+      {
+        "bug_id": 2403901,
+        "title": "CVE-2025-11708 firefox: use-after-free in MediaTrackGraphImpl",
+        "security": true,
+        "parent": false,
+        "feedback": []
+      }
+    ],
+    "comments": [
+      {
+        "id": 21,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been submitted for testing by mstransky. ",
+        "timestamp": "2025-10-13 19:30:02",
+        "update_id": 3,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 22,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been obsoleted by [firefox-144.0.1-1.fc43](https://bodhi.fedoraproject.org/updates/FEDORA-2025-9a8b7c6d5e).",
+        "timestamp": "2025-10-15 11:02:47",
+        "update_id": 3,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      }
+    ],
+    "compose": null,
+    "url": "https://bodhi.fedoraproject.org/updates/FEDORA-2025-4f2a6d9b01",
+    "version_hash": "3f6c1b2a9e0d4c7b8a5f2e1d0c9b8a7f6e5d4c3b"
+  },
+  "can_edit": false
+}

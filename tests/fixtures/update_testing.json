@@ -1,0 +1,223 @@
+{
+  "update": {
+    "alias": "FEDORA-2025-b3e90a1c55",
+    "title": "systemd-257.10-1.fc43",
+    "display_name": "",
+    "notes": "Fixes for resolved and networkd.",
+    "status": "testing",
+    "request": null,
+    "type": "bugfix",
+    "severity": "medium",
+    "suggest": "unspecified",
+    "critpath": true,
+    "critpath_groups": [
+      "critical-path-base",
+      "critical-path-gnome"
+    ],
+    "close_bugs": true,
+    "locked": false,
+    "pushed": true,
+    "karma": 1,
+    "stable_karma": 3,
+    "unstable_karma": -3,
+    "stable_days": 14,
+    "autokarma": true,
+    "autotime": true,
+    "require_bugs": true,
+    "require_testcases": true,
+    "requirements": "",
+    "test_gating_status": "failed",
+    "from_tag": null,
+    "date_submitted": "2025-11-20 14:05:21",
+    "date_modified": "2025-11-24 07:45:00",
+    "date_approved": null,
+    "date_testing": "2025-11-21 02:10:13",
+    "date_stable": null,
+    "content_type": "rpm",
+    "release": {
+      "name": "F43",
+      "long_name": "Fedora 43",
+      "version": "43",
+      "id_prefix": "FEDORA",
+      "branch": "f43",
+      "dist_tag": "f43",
+      "stable_tag": "f43-updates",
+      "testing_tag": "f43-updates-testing",
+      "candidate_tag": "f43-updates-candidate",
+      "pending_stable_tag": "f43-updates-pending",
+      "pending_testing_tag": "f43-updates-testing-pending",
+      "pending_signing_tag": "f43-signing-pending",
+      "override_tag": "f43-override",
+      "mail_template": "fedora_errata_template",
+      "state": "current",
+      "composed_by_bodhi": true,
+      "create_automatic_updates": false,
+      "package_manager": "dnf",
+      "testing_repository": "updates-testing",
+      "released_on": null,
+      "eol": null,
+      "setting_status": null,
+      "min_karma": 1,
+      "critpath_min_karma": 2,
+      "mandatory_days_in_testing": 7
+    },
+    "user": {
+      "id": 4020,
+      "name": "zbyszek",
+      "email": "zbyszek@in.waw.pl",
+      "avatar": "https://seccdn.libravatar.org/avatar/0",
+      "openid": "zbyszek.id.fedoraproject.org",
+      "groups": [
+        {
+          "name": "packager"
+        }
+      ]
+    },
+    "builds": [
+      {
+        "nvr": "systemd-257.10-1.fc43",
+        "release_id": 0,
+        "signed": true,
+        "type": "rpm",
+        "epoch": 0
+      }
+    ],
+    "bugs": [
+      {
+        "bug_id": 2412001,
+        "title": "systemd-resolved crashes on DNSSEC validation failure",
+        "security": false,
+        "parent": false,
+        "feedback": []
+      },
+      {
+        "bug_id": 2412233,
+        "title": "networkd fails to bring up bond on boot",
+        "security": false,
+        "parent": false,
+        "feedback": []
+      }
+    ],
+    "comments": [
+      {
+        "id": 11,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been submitted for testing by zbyszek. ",
+        "timestamp": "2025-11-20 14:05:21",
+        "update_id": 2,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 12,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been pushed to testing.",
+        "timestamp": "2025-11-21 02:10:13",
+        "update_id": 2,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 13,
+        "karma": 1,
+        "karma_critpath": 0,
+        "text": "Boots and resolves fine on my laptop.",
+        "timestamp": "2025-11-22 10:00:00",
+        "update_id": 2,
+        "user_id": 5310,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 5310,
+          "name": "geraldosimiao",
+          "email": "geraldo.simiao.kutz@gmail.com",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "geraldosimiao.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 14,
+        "karma": -1,
+        "karma_critpath": 0,
+        "text": "Bond interface still not up after reboot, see bug.",
+        "timestamp": "2025-11-23 16:20:00",
+        "update_id": 2,
+        "user_id": 6233,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 6233,
+          "name": "frantisekz",
+          "email": "fzatloukal@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "frantisekz.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 15,
+        "karma": 1,
+        "karma_critpath": 0,
+        "text": "Works for me on two servers.",
+        "timestamp": "2025-11-24 07:45:00",
+        "update_id": 2,
+        "user_id": 7002,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 7002,
+          "name": "adamwill",
+          "email": "awilliam@redhat.com",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "adamwill.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      }
+    ],
+    "compose": null,
+    "url": "https://bodhi.fedoraproject.org/updates/FEDORA-2025-b3e90a1c55",
+    "version_hash": "3f6c1b2a9e0d4c7b8a5f2e1d0c9b8a7f6e5d4c3b"
+  },
+  "can_edit": false
+}

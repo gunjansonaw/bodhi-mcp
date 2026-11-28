@@ -1,0 +1,215 @@
+{
+  "update": {
+    "alias": "FEDORA-2025-7c1d4e8f2a",
+    "title": "python3.13-3.13.9-1.fc42",
+    "display_name": "",
+    "notes": "Security fix for CVE-2025-6075.",
+    "status": "stable",
+    "request": null,
+    "type": "security",
+    "severity": "high",
+    "suggest": "unspecified",
+    "critpath": true,
+    "critpath_groups": [
+      "critical-path-base"
+    ],
+    "close_bugs": true,
+    "locked": false,
+    "pushed": true,
+    "karma": 3,
+    "stable_karma": 3,
+    "unstable_karma": -3,
+    "stable_days": 7,
+    "autokarma": true,
+    "autotime": true,
+    "require_bugs": true,
+    "require_testcases": true,
+    "requirements": "",
+    "test_gating_status": "passed",
+    "from_tag": null,
+    "date_submitted": "2025-10-15 09:12:44",
+    "date_modified": "2025-10-19 18:03:10",
+    "date_approved": null,
+    "date_testing": "2025-10-16 01:22:57",
+    "date_stable": "2025-10-19 18:03:10",
+    "content_type": "rpm",
+    "release": {
+      "name": "F42",
+      "long_name": "Fedora 42",
+      "version": "42",
+      "id_prefix": "FEDORA",
+      "branch": "f42",
+      "dist_tag": "f42",
+      "stable_tag": "f42-updates",
+      "testing_tag": "f42-updates-testing",
+      "candidate_tag": "f42-updates-candidate",
+      "pending_stable_tag": "f42-updates-pending",
+      "pending_testing_tag": "f42-updates-testing-pending",
+      "pending_signing_tag": "f42-signing-pending",
+      "override_tag": "f42-override",
+      "mail_template": "fedora_errata_template",
+      "state": "current",
+      "composed_by_bodhi": true,
+      "create_automatic_updates": false,
+      "package_manager": "dnf",
+      "testing_repository": "updates-testing",
+      "released_on": null,
+      "eol": null,
+      "setting_status": null,
+      "min_karma": 1,
+      "critpath_min_karma": 2,
+      "mandatory_days_in_testing": 7
+    },
+    "user": {
+      "id": 4012,
+      "name": "mhroncok",
+      "email": "mhroncok@redhat.com",
+      "avatar": "https://seccdn.libravatar.org/avatar/0",
+      "openid": "mhroncok.id.fedoraproject.org",
+      "groups": [
+        {
+          "name": "packager"
+        }
+      ]
+    },
+    "builds": [
+      {
+        "nvr": "python3.13-3.13.9-1.fc42",
+        "release_id": 0,
+        "signed": true,
+        "type": "rpm",
+        "epoch": 0
+      }
+    ],
+    "bugs": [
+      {
+        "bug_id": 2401234,
+        "title": "CVE-2025-6075 python3.13: quadratic complexity in os.path.expandvars()",
+        "security": true,
+        "parent": false,
+        "feedback": []
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been submitted for testing by mhroncok. ",
+        "timestamp": "2025-10-15 09:12:44",
+        "update_id": 1,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "karma": 1,
+        "karma_critpath": 0,
+        "text": "Works fine, tested several scripts.",
+        "timestamp": "2025-10-16 12:40:03",
+        "update_id": 1,
+        "user_id": 5310,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 5310,
+          "name": "geraldosimiao",
+          "email": "geraldo.simiao.kutz@gmail.com",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "geraldosimiao.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "karma": 1,
+        "karma_critpath": 0,
+        "text": "No regressions in openQA or my local tests.",
+        "timestamp": "2025-10-17 08:11:30",
+        "update_id": 1,
+        "user_id": 6233,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 6233,
+          "name": "frantisekz",
+          "email": "fzatloukal@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "frantisekz.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "karma": 1,
+        "karma_critpath": 0,
+        "text": "Signed-off-by: someone <someone@example.com> pasted in a comment",
+        "timestamp": "2025-10-18 21:05:44",
+        "update_id": 1,
+        "user_id": 7001,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 7001,
+          "name": "kparal",
+          "email": "kparal@redhat.com",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "kparal.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "karma": 0,
+        "karma_critpath": 0,
+        "text": "This update has been pushed to stable.",
+        "timestamp": "2025-10-19 18:03:10",
+        "update_id": 1,
+        "user_id": 91,
+        "bug_feedback": [],
+        "testcase_feedback": [],
+        "user": {
+          "id": 91,
+          "name": "bodhi",
+          "email": "bodhi@fedoraproject.org",
+          "avatar": "https://seccdn.libravatar.org/avatar/0",
+          "openid": "bodhi.id.fedoraproject.org",
+          "groups": [
+            {
+              "name": "packager"
+            }
+          ]
+        }
+      }
+    ],
+    "compose": null,
+    "url": "https://bodhi.fedoraproject.org/updates/FEDORA-2025-7c1d4e8f2a",
+    "version_hash": "3f6c1b2a9e0d4c7b8a5f2e1d0c9b8a7f6e5d4c3b"
+  },
+  "can_edit": false
+}
