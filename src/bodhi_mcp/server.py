@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Annotated
 
 from mcp.server.mcpserver import MCPServer
@@ -15,11 +16,30 @@ READ_ONLY = ToolAnnotations(
     read_only_hint=True, destructive_hint=False, idempotent_hint=True, open_world_hint=True
 )
 
+ALIAS_RE = re.compile(r"^FEDORA(-[A-Z]+)*-\d{4}-[0-9a-f]{10}$")
+
 INSTRUCTIONS = """\
 Read-only access to Fedora's Bodhi update system.
 Updates are identified by alias, e.g. FEDORA-2026-1a2b3c4d5e.
 Koji build details belong to koji-mcp; Bodhi only knows builds by NVR.
 """
+
+
+def validate_alias(alias: str) -> str:
+    """Return ``alias`` stripped of whitespace, or raise ``ToolError`` if it is malformed.
+
+    Bodhi aliases are a release prefix (``FEDORA``, ``FEDORA-EPEL``, ``FEDORA-FLATPAK``,
+    ...), a four-digit year and ten lowercase hex digits, e.g. ``FEDORA-2026-1a2b3c4d5e``.
+    Checking this up front gives a clear error and keeps arbitrary paths out of requests.
+    """
+    alias = alias.strip()
+    if not ALIAS_RE.fullmatch(alias):
+        raise ToolError(
+            f"Invalid update alias {alias!r}. Expected FEDORA-YYYY-xxxxxxxxxx "
+            "(ten lowercase hex digits), e.g. FEDORA-2026-1a2b3c4d5e, or an "
+            "EPEL/Flatpak alias such as FEDORA-EPEL-2026-1a2b3c4d5e."
+        )
+    return alias
 
 
 def create_server(client: BodhiClient) -> MCPServer:
@@ -31,10 +51,11 @@ def create_server(client: BodhiClient) -> MCPServer:
         alias: Annotated[str, Field(description="Update alias, e.g. 'FEDORA-2026-1a2b3c4d5e'.")],
     ) -> str:
         """Get one Bodhi update: status, pending request, release, builds (NVRs) and link."""
+        alias = validate_alias(alias)
         try:
             data = await client.get(f"/updates/{alias}")
         except BodhiError as exc:
-            raise ToolError(f"{exc}. Check the alias format FEDORA-YYYY-xxxxxxxxxx.") from exc
+            raise ToolError(f"{exc}. Check that the update alias exists.") from exc
         update = data["update"]
         builds = ", ".join(b["nvr"] for b in update.get("builds", []))
         return "\n".join(

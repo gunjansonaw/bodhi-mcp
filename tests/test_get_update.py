@@ -11,7 +11,7 @@ from conftest import (
 from mcp.server.mcpserver.exceptions import ToolError
 
 from bodhi_mcp.client import BodhiClient
-from bodhi_mcp.server import create_server
+from bodhi_mcp.server import create_server, validate_alias
 
 
 async def call(server, alias: str) -> str:
@@ -51,6 +51,40 @@ async def test_server_error_is_a_tool_error():
     server = create_server(BodhiClient(transport=router.transport()))
     with pytest.raises(ToolError, match="HTTP 503"):
         await call(server, STABLE_ALIAS)
+
+
+@pytest.mark.parametrize(
+    "alias",
+    [
+        "",
+        "foo-1.2-1.fc44",
+        "FEDORA-2026",
+        "FEDORA-26-1a2b3c4d5e",
+        "FEDORA-2026-1a2b3c4d5",
+        "FEDORA-2026-1A2B3C4D5E",
+        "fedora-2026-1a2b3c4d5e",
+        "FEDORA-2026-1a2b3c4d5e/comments",
+        "../releases",
+    ],
+)
+async def test_invalid_alias_is_rejected_without_a_request(server, router, alias):
+    with pytest.raises(ToolError, match="Invalid update alias"):
+        await call(server, alias)
+    assert router.requests == []
+
+
+@pytest.mark.parametrize(
+    "alias",
+    [
+        "FEDORA-2026-1a2b3c4d5e",
+        "FEDORA-EPEL-2025-0f9e8d7c6b",
+        "FEDORA-EPEL-NEXT-2024-a1b2c3d4e5",
+        "FEDORA-FLATPAK-2025-1234567890",
+        "  FEDORA-2026-1a2b3c4d5e  ",
+    ],
+)
+def test_valid_aliases(alias):
+    assert validate_alias(alias) == alias.strip()
 
 
 def test_fixtures_keep_emails_so_stripping_can_be_tested():
